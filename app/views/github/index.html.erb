@@ -1,0 +1,30 @@
+<h1>I love Porygon</h1>
+<p>Information about my favorite Pokemon</p>
+
+<h2>Images</h2>
+
+<% JSON.parse(@image.to_json)['sprites'].each do |key, value| %>
+
+<img src="<%=value%>">
+<%end%>
+
+<!--
+<img src="<%= JSON.parse(@image.to_json)['sprites']['front_default'] %>">
+<img src="<%= JSON.parse(@image.to_json)['sprites']['front_shiny'] %>">
+<img src="<%= JSON.parse(@image.to_json)['sprites']['back_default'] %>">
+<img src="<%= JSON.parse(@image.to_json)['sprites']['back_shiny'] %>">
+
+
+<h2>Abilities</h2>
+<% JSON.parse(@profile.to_json)['abilities'][0]['ability'].each do |key, value| %>
+  <p> <%=key.upcase %>: <%= value %>  </p>
+
+
+<%end%>
+-->
+
+<h2>Statistics</h2>
+
+  <% JSON.parse(@profile.to_json).each do |key,value| %>
+     <p> <strong><%=key.upcase %></strong>: <%= value %>  </p>
+  <%end%>
